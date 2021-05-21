@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'gilroyblack';
+    src: url('../fonts/gilroy-black-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gilroybold';
+    src: url('../fonts/gilroy-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gilroyregular';
+    src: url('../fonts/gilroy-regular-webfont.woff2') format('woff2'),
+         url('../fonts/gilroy-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* Estilachos */
 * {
     box-sizing: border-box;
@@ -16,14 +43,15 @@ a {
     text-decoration: none;
 }
 
-
+body {
+    font-family: 'gilroyregular';
+}
 
 /*****   container-body    ****/
 .container-body {
     background-color: #C52D37;
 }
 .container-app {
-    background-color: white;
     position: absolute;
     top: 50px;
     left: 50px;
@@ -31,6 +59,7 @@ a {
     bottom: 50px;
     border-radius: 20px;
     display: flex;
+    overflow: hidden;
 }
 
 .left-sidebar {
@@ -39,16 +68,19 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    background-color: white;
 }
 .left-sidebar .logo img{
-    width: 100px;
+    width: 120px;
 }
 .left-sidebar .logo {
     display: block;
     text-align: center;
 }
 .navbar {
-    margin-top: 30px;
+    margin-top: 45px;
+    font-size: 1.5rem;
 }
 .navbar a {
     display: block;
@@ -76,24 +108,72 @@ a {
     width: 100%;
     display: block;
     padding: 35px 30px 0 30px;
+    background: rgba(255,255,255,.9);
 }
+
+.main-search {
+    margin-bottom: 30px;
+}
+
 .main-search input {
     width: 100%;
     color: var(--grisTexto);
     border-radius: 7px;
-    padding: 4px;
+    padding: 12px;
     text-align: center;
-    border: 1px solid black;
+    border: none;
+    border: solid 2px #fff;
+    transition: .2s all;
 }
+
+.main-search input:focus {
+    outline: none;
+    border-color: #C52D37;
+}
+
+.main-search input::-webkit-input-placeholder {
+    font-family: "Font Awesome 5 Free", 'gilroyregular';
+    font-weight: 900;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color: var(--grisTexto);
+}
+
 .main-items {
     margin-top: 23px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
     border-radius: 7px;
     color: var(--grisTexto);
-    border: 1px solid black;
+    background: #fff;
+    font-size: 1.3rem;
+    overflow: hidden;
 }
+
+.item-inbox.active {
+    background: #EA424D;
+    color: #fff;
+}
+
+.item-inbox {
+    flex:1;
+    text-align: center;
+    padding: 10px 15px;
+    color: var(--grisTexto);
+}
+
+.item-inbox i {
+    margin-right: 15px;
+}
+
+.messages {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 .item-destacado {
     margin-right: 10px;
 }
@@ -101,17 +181,52 @@ a {
     margin-right: 7px;
 }
 .main-mensages {
-
+    display: flex;
+    background: #fff;
+    border: solid .5px rgba(255,255,255. 4);
+    border-radius: 5px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .2s all;
+    font-size: 1.3rem;
 }
+
+.main-mensages:hover {
+    transform: translateY(-5px);
+}
+
 .user {
     width: 30px;
     border-radius: 50%;
 }
 .img-user {
     display: flex;
+    align-items: center;
+    flex: 1 1 0px;
 }
-.img-user i {
-    position: ;
+
+.ml-5 {
+    margin-right: 10px;
+}
+
+.fa-circle {
+    color: #EA424D;
+}
+
+.mensager-text h3 {
+ margin-right: 15px;
+}
+
+.mensager-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 7 1 auto;
+}
+
+.mensager-text p {
+    opacity: .6;
 }
 
 .right-container {
