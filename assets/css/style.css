@@ -232,3 +232,22 @@ body {
 .right-container {
     display: none;
 }
+.main-items .social:hover {
+    background-color: #4285F4;
+    color: white;
+    transition: .6s;
+}
+.main-items .social:focus {
+    background-color: #4285F4;
+    color: white;
+}
+
+.main-items .promociones:hover {
+    background-color: #34A853;
+    color: white;
+    transition: .6s;
+}
+.main-items .promociones:focus {
+    background-color: #34A853;
+    color: white;
+}
